@@ -1,0 +1,178 @@
+/* Page background */
+body {
+  background-color: #a85c5c; /* Border */
+  margin: 0;
+  padding: 0;
+}
+
+/* Main App container */
+.App {
+  text-align: center;
+  color: #282c34;
+  width: 60%;
+  margin: auto;
+  background-color: #ffffff; /* Background of game */
+  min-height: 100vh;
+  padding: 20px;
+  border: 2px solid #ffffff; /* Add border back */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Old App-header - you may not need this anymore */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* NEW: Style for your game header */
+.app-header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  margin: -20px -20px 30px -20px; /* Extends to edges of App container */
+  text-align: center;
+  font-family: 'Arial Black', 'Impact', sans-serif; /* Change font here!*/
+  
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: 'Arial Black', 'Impact', sans-serif; /* Bold header font */
+}
+
+.app-header p {
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Different font for subtitle */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header section with logo and button */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Add this to center everything */
+  margin-bottom: 20px;
+  width: 100%; /* Make sure it takes full width */
+}
+
+/* Logo styling */
+.logo {
+  width: 150px; 
+  height: auto;
+  margin-bottom: 90px;
+  display: block; /* Ensure it's a block element */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+/* Dice decorations */
+.dice-decoration {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.dice-decoration:hover {
+  transform: rotate(15deg) scale(1.1);
+  opacity: 1;
+}
+
+.dice-top-left {
+  top: 150px;
+  left: 20px;
+  transform: rotate(-15deg);
+}
+
+.dice-top-right {
+  top: 150px;
+  right: 20px;
+  transform: rotate(20deg);
+}
+
+.dice-bottom-left {
+  bottom: 100px;
+  left: 80px;
+  transform: rotate(10deg);
+}
+
+/* Make header-section relative for absolute positioning */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative; /* Add this */
+}
+
+/* Container for summary and found words */
+.summary-container {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove the background from individual sections inside container */
+.summary-container .Found-solutions-list {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.timer-display {
+  text-align: center;
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #003366;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timer-display h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  font-weight: bold;
+}
