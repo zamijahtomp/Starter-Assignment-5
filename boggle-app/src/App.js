@@ -80,7 +80,7 @@ function App() {
     if (typeof challenge.grid[0] === 'string') {
       properGrid = challenge.grid.map(row => {
         // Remove brackets and quotes, then split by comma
-        const cleanRow = row.replace(/[\[\]'"\s]/g, '');
+        const cleanRow = row.replace(/[[\]'"\s]/g, '');
         return cleanRow.split(',');
       });
     }
