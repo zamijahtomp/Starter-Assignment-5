@@ -1,0 +1,66 @@
+.Found-solutions-list {
+  text-align: center;
+  margin: 25pt;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Found-solutions-list h4 {
+  color: #003366;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-family: 'Arial Black', 'Impact', sans-serif; /* Bold font for header */
+  font-weight: bold;
+}
+
+/* Multi-column grid layout */
+.words-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.word-item {
+  background-color: white;
+  padding: 12px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14pt;
+  font-family: 'Georgia', 'Times New Roman', serif; /* Change word font */
+  border: 2px solid #e0e0e0;
+  transition: all 0.2s ease;
+  text-transform: lowercase;
+}
+
+.word-item:hover {
+  background-color: #4a90e2;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+  border-color: #4a90e2;
+}
+
+/* Scrollbar styling */
+.words-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.words-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.words-grid::-webkit-scrollbar-thumb {
+  background: #4a90e2;
+  border-radius: 10px;
+}
+
+.words-grid::-webkit-scrollbar-thumb:hover {
+  background: #357abd;
+}
