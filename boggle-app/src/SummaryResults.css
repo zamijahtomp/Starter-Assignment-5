@@ -1,0 +1,30 @@
+.Summary {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.Summary h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  color: #003366;
+  font-weight: bold;
+}
+
+.Summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.Summary li {
+  margin: 10px 0;
+  font-size: 1.2em;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 500;
+}
+
+/* Style for the summary stats */
+.Summary strong {
+  color: #003366;
+  font-weight: bold;
+}
