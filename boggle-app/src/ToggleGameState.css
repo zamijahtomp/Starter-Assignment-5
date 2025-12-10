@@ -1,0 +1,43 @@
+.Toggle-game-state {
+  text-align: center;
+  margin-top: -50pt;
+  margin-bottom: 25pt;
+}
+
+.Input-select-size {
+  margin-top: -28.4pt;
+  margin-left: 200pt;
+  margin-bottom: 25pt;
+}
+
+/* Start button */
+.start-game-btn {
+  background-color: #5e66d8; /* green */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start-game-btn:hover {
+  background-color: #1824d3; /* darker green */
+}
+
+/* End button */
+.end-game-btn {
+  background-color: #da5858; /* red */
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.end-game-btn:hover {
+  background-color: #b71c1c; /* darker red */
+}
