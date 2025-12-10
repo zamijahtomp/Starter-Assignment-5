@@ -1,0 +1,31 @@
+.Board-div {
+  width: 700px;
+  margin: auto;
+  font-size: 40pt;
+}
+
+.Tile {
+  text-align: center;
+  line-height: 50pt;
+  vertical-align: middle;
+}
+
+/* Style the Paper component tiles */
+.Tile Paper, .Tile > div {
+  background-color: #a7706a !important; /* Red background - change to any color */
+  color: #f2cbc7 !important;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional: hover effect */
+.Tile Paper:hover, .Tile > div:hover {
+  background-color: #c0392b !important; /* Darker red on hover */
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
