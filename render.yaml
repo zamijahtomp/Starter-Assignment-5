@@ -1,11 +1,15 @@
-# render.yaml (Blueprint for Render deployment)
 services:
   # 1. Django Web Service
   - type: web
-    name: my-django-app
+    name: boggle-backend
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn myproject.wsgi:application" # Adjust 'myproject'
+    
+    # FIX 1: Run collectstatic during the build
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    
+    # FIX 2: Correctly reference your project's WSGI application
+    startCommand: "gunicorn boggle_backend.wsgi" 
+    
     healthCheckPath: "/admin/" # Or any simple endpoint
     envVars:
       - key: SECRET_KEY
@@ -14,19 +18,20 @@ services:
         value: 4
       - key: DEBUG
         value: "False"
-      # Set up your Database URL (see Step 2)
+      
+      # Set up your Database URL
       - key: DATABASE_URL
         fromDatabase:
-          name: my-django-db
+          # Match the DB name below
+          name: boggle-db
           property: connectionString
-    # Static files setup (optional, can also use S3/Cloudinary)
-    staticFiles:
-      - path: /static
-        # Assumes your Django STATIC_ROOT is set to 'staticfiles_build'
-        directory: staticfiles_build
+    
+    # FIX 3: REMOVE the staticFiles block completely
+    # Do not include staticFiles: here if using WhiteNoise.
 
-  # 2. PostgreSQL Database Service (If needed)
+  # 2. PostgreSQL Database Service
   - type: pserv
-    name: my-django-db
+    # FIX 4: Use a project-specific name
+    name: boggle-db
     plan: starter # Choose your plan
-    databaseName: my_app_db
+    databaseName: boggle_db
