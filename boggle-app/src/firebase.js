@@ -13,13 +13,13 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // Make sure to replace placeholders
 const firebaseConfig = {
-  apiKey: "API",
-  authDomain: "DOMAIN",
-  projectId: "ID",
-  storageBucket: "APP",
-  messagingSenderId: "ID",
-  appId: "ID",
-  measurementId: "ID"
+  apiKey: "AIzaSyDh3ZuihshIu1o0XZySbZD_ud8iB5RN-dA",
+  authDomain: "boggle-f4015.firebaseapp.com",
+  projectId: "boggle-f4015",
+  storageBucket: "boggle-f4015.firebasestorage.app",
+  messagingSenderId: "773529836780",
+  appId: "1:773529836780:web:6ebaf691021bef3c89d9c9",
+  measurementId: "G-3MB7Z693RH"
 };
 
 // Initialize Firebase
