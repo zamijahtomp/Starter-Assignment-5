@@ -1,16 +1,14 @@
 services:
-  # 1. Django Web Service
+  # 1. Django Web Service (Index 0)
   - type: web
     name: boggle-backend
     env: python
     
-    # FIX 1: Run collectstatic during the build
+    # This service has buildCommand, startCommand, and runtime (env: python)
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
-    
-    # FIX 2: Correctly reference your project's WSGI application
     startCommand: "gunicorn boggle_backend.wsgi" 
     
-    healthCheckPath: "/admin/" # Or any simple endpoint
+    healthCheckPath: "/admin/"
     envVars:
       - key: SECRET_KEY
         generateValue: true
@@ -18,19 +16,14 @@ services:
         value: 4
       - key: DEBUG
         value: "False"
-      
-      # Set up your Database URL
       - key: DATABASE_URL
         fromDatabase:
-          # Match the DB name below
           name: boggle-db
           property: connectionString
-    
-    # FIX 3: REMOVE the staticFiles block completely
-    # Do not include staticFiles: here if using WhiteNoise.
 
-  # 2. PostgreSQL Database Service
+  # 2. PostgreSQL Database Service (Index 1)
+  # 🚨 Ensure the dash (-) for this service is at the same level as the dash for the first service.
   - type: pserv
-    # FIX 4: Use a project-specific name
     name: boggle-db
-    plan: starter # Choose your plan
+    plan: starter
+    # Database services DO NOT take 'env', 'runtime', 'buildCommand', or 'startCommand'.
