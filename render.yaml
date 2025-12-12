@@ -34,4 +34,3 @@ services:
     # FIX 4: Use a project-specific name
     name: boggle-db
     plan: starter # Choose your plan
-    databaseName: boggle_db
